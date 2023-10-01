@@ -1,0 +1,40 @@
+
+Class: Journal
+Attributes: 
+* _entries: List<Entry>
+
+Behaviors: 
+* WriteEntry    // This method invoke the PromptGenerator.PromptEntry method which returns an new entry and subsequently added to the _entries list.
+* DisplayEntries    // This method iterates through the _entries list and invokes the display method of each entry
+* LoadEntries   // This method invokes the File.Load method to load entries from a file with a specified _fileName
+* SaveEntries   // This method invokes the File.Load method to save entries in a file with a specified _fileName
+* Quit  // This method ends the program
+
+
+Class: Entry
+Attributes:
+* _title: string
+* _record: string
+* _date: string
+
+Behaviors:
+* Display   // Display the attributes of the Entry object
+
+
+Class: PromptGenerator
+Attributes:
+* _menu: List<string>
+* _entry: Entry
+
+Behaviors:
+* PromptOptions: int    // The return value can be int to return the number associated with the option or return a string associated with the option. eg. "save"
+* PromptEntry: Entry    // This method prompts the user to enter an entry and returns the new entry object.
+
+
+Class: File
+Attributes:
+* _fileName: string
+
+Behaviors:
+* Save: int // Saves data or entries to a specified file. The return value is the exit code for the function is its execution was successful
+* Load: int // Loads data or entries from a specified file. The return value is the exit code for the function is its execution was successful
