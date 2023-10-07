@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Welcome to the Journal Program!");
         Journal journal = new Journal();
         bool quit = false;
         while (!quit)
@@ -19,10 +20,10 @@ class Program
                     journal.Display();
                     break;
                 case PromptGeneratorMenu.Load:
-                    journal.Load();
+                    journal.Load(PromptGenerator.PromptFilename());
                     break;
                 case PromptGeneratorMenu.Save:
-                    journal.Save();
+                    journal.Save(PromptGenerator.PromptFilename());
                     break;
                 case PromptGeneratorMenu.Quit:
                     quit = journal.Quit();
