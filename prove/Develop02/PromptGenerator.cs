@@ -30,7 +30,7 @@ class PromptGenerator
         Console.WriteLine("3. Load");
         Console.WriteLine("4. Save");
         Console.WriteLine("5. Quit");
-        // Console.Write("Enter choice: ");
+        Console.Write("What would you like to do? ");
         string choice = Console.ReadLine();
         if (int.TryParse(choice, out int result))
         {
@@ -57,6 +57,13 @@ class PromptGenerator
         DateTime date = DateTime.Now;
         Entry entry = new Entry(text, date, prompt);
         return entry;
+    }
+
+    public static string PromptFilename()
+    {
+        Console.WriteLine("What is the filename?");
+        string filename = Console.ReadLine();
+        return filename;
     }
 
 }
