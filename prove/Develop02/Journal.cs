@@ -18,15 +18,15 @@ class Journal
         }
     }
 
-    public void Save()
+    public void Save(string filename)
     {
-        File.save("test.txt", _entries);
+        FileOperations.save(filename, _entries);
     }
 
-    public void Load()
+    public void Load(string filename)
     {
         _entries.Clear();
-        File.load("test.txt", _entries);
+        FileOperations.load(filename, ref _entries);
 
 
     }
