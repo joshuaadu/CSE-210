@@ -1,0 +1,42 @@
+Class: Scripture
+Attributes:
+* _reference: Reference
+* _text: string
+* _words: List<Word>
+
+Behaviors:
+* Scripture(reference: Reference, text: string)
+
+* GetReference: string
+* GetText: string // Joins the words in _words based on their hidden state and returns the final string
+* HideWords: void // Use a random index to hide a word in _words
+* ConvertTextToWords: List<Word> // Split text into a list of Words and store in _words. This called in the constructor and it is a private method
+
+
+Class: Reference // This can also be a record class
+Attributes:
+* _book: string
+* _chapter: int
+* _verseStart: int
+* _verseEnd: int
+* _reference: string
+
+Behaviors:
+* Reference(book: string, _chapter: int, _verse: int)
+* Reference(book: string, _chapter: int, _verse: int, _end: int) // In both constructors, the reference is set appropriately
+
+* GetReference: string
+
+
+Class: Word
+Attributes:
+* _text: string
+* _placeholder: string
+* _hidden: bool
+
+Behaviors:
+* Word(text: string)
+
+* GetWord: string // Returns the _placeholder if _hidden is true or the actual text if otherwise
+* Hide: void
+* Show: void
