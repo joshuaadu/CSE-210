@@ -1,6 +1,11 @@
 using System;
-// using System.Globalization;
 
+/*
+* Stretch Challenges:
+* 1. User can enter their own scripture block to memorize
+* 2. Users can memorize multiple scriptures in a row without restarting the program
+* 3. Randomly select from only those words that are not already hidden
+*/
 class Program
 {
     static void Main(string[] args)
