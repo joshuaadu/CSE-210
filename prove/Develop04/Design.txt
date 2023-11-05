@@ -1,0 +1,47 @@
+class: Activity
+Attributes:
+_name : string
+_description: string
+_duration: int
+
+Behavior
+Activity(string name, string _description)
+SetDuration(int duration): void
+Begin: void
+Pause: void
+Animation: void
+CountDown: void
+Done: string
+
+
+class: BreathingActivity -> Activity
+Attributes:
+_messages: List<string>
+
+Behavior:
+BreathingActivity(string name, string description, List<string> messages): base(name, description)
+ShowMessage: void
+
+
+class: ReflectionActivity -> Activity
+Attributes:
+_startingMessages: List<string>
+_questions: List<string>
+_answers: List<string>
+
+Behavior:
+ReflectionActivity(string name, string description, List<string> messages, List<string> questions): base(name, description)
+RandomPrompt: void
+ReflectionQuestionPrompt: void
+
+
+class ListingActivity -> Activity
+Attributes:
+_userList: List<string>
+_startingMessages: List<string>
+
+Behavior:
+ListingActivity(string name, string description, List<string> messages): base(name, description)
+RandomPrompt: void
+AddToList: void
+GetListCount: int
