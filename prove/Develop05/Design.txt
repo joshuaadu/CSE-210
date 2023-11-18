@@ -1,0 +1,50 @@
+class: Goal 
+Atrributes:
+_name: string
+_description: string
+_points: int
+_completed: bool
+
+Behavior:
+Goal(name: string, description: string, points: int): void
+GetName: string
+SetName: void
+GetDescription: string
+SetDescription: void
+GetPoint: int
+SetPoint: void
+GetCompleted: int
+SetCompleted: void // Virtual Method to be overriden in derived classes 
+Display: void // Virtual Method to be overriden in derived classes
+
+
+class: SimpleGoal -> Goal
+Attributes:
+
+Behavior
+
+
+
+class: EternalGoal -> Goal
+Attributes:
+
+Behavior:
+Eternal Goal(name: string, description: string, points: int): void
+
+
+
+class: ChecklistGoal -> Goal
+Attributes:
+_completionTimes: int
+_bonusPoints: int
+
+Behavior:
+ChecklistGoal(name: string, description: string, points: int, bonusPoints): void
+GetBonusPoints: int
+SetBonusPoints: void
+GetCompletionTimes: int
+SetCompletionTimes: void
+Display: void  // Override Display method of base class
+
+
+
