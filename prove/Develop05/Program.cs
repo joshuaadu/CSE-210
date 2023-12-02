@@ -2,6 +2,11 @@ using System;
 
 class Program
 {
+    /*
+    * Strecth Goals:
+    * 1. Add start and end times to goals
+    * 2. Handle invalid input for robustness
+    */
     static void Main(string[] args)
     {
         // Console.WriteLine("Hello Develop05 World!");
