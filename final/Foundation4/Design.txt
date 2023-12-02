@@ -1,0 +1,36 @@
+Class: Activity
+Attributes:
+_date: DateTime
+_length: int
+
+Behaviors:
+Activity(date: DateTime, length: int)
+virtual GetSummary: string
+virtual GetDistance: double
+virtual GetSpeed: double
+virtual GetPace: double
+
+
+
+Class: Running -> Activity
+Attributes:
+_distance: double
+
+Behaviors:
+Running(date: DateTime, length: int, distance: double): base(date: DateTime, length: int)
+
+
+Class: Cycling -> Activity
+Attributes:
+_speed: int
+
+Behaviors:
+Cycling(date: DateTime, length: int, speed: int): base(date: DateTime, length: int)
+
+
+Class: Swimming -> Activity
+Attributes:
+_laps: int
+
+Behaviors:
+Swimming(date: DateTime, length: int, laps: int): base(date: DateTime, length: int)

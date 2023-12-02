@@ -1,0 +1,76 @@
+Class: Event
+Attributes:
+_title: string
+_description: string
+_date: DateTime
+_time: DateTime
+_address: Address
+_type: string
+
+Behaviors:
+Event(type: string, title: string, description: string, date: string, time: string)
+GetTitle: string
+SetTitle: string
+GetDescription: string
+SetDescription: void
+GetDate: string
+SetDate: string
+GetTime: string
+SetTime: void
+GetAddress: string
+SetAddress: void
+GetDetails: string
+
+
+
+
+Class: Address
+Attributes:
+_street: string
+_city: string
+_state: string
+_country: string
+
+Behaviors:
+Address(street: string, city: string, state: string, country: string)
+GetStreet: string
+SetStreet: string
+GetCity: string
+SetCity: string
+GetState: string
+SetState: string
+GetCountry: string
+SetCountry: string
+isInUSA: bool
+
+
+
+Class: Lecture -> Event
+Attributes
+_speaker: string
+_capacity: int
+
+
+Behaviors:
+lecture(type: string, title: string, description: string, date: string, time: string, speaker: string, capacity: int): base(type: string, title: string, description: string, date: string, time: string)
+GetFullDetails: string
+
+
+Class: Reception -> Event
+Attributes: 
+_email: string
+
+Behaviors:
+Reception(type: string, title: string, description: string, date: string, time: string, email: string): base(type: string, title: string, description: string, date: string, time: string)
+GetFullDetails: string
+
+
+
+Class: OutdoorGathering -> Event
+Attributes:
+_weather: string
+
+Behaviors:
+OutdoorGathering(type: string, title: string, description: string, date: string, time: string, weather: string): base(type: string, title: string, description: string, date: string, time: string)
+GetFullDetails: string
+

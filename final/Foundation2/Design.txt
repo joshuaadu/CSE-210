@@ -1,0 +1,63 @@
+Class: Product
+Attributes:
+_name: string
+_id: Guid
+_price: double
+_quantity: int
+
+
+Behaviors:
+Product(name: string, id)
+GetName: string
+SetName: void
+GetPrice: double
+SetPrice: void
+GetQuantity: int
+
+
+
+Class: Customer
+Attributes:
+_name: string
+_address: Address
+
+
+Behaviors:
+Customer(name: string, address: Address)
+GetName: string
+SetName: string
+GetAddress: string
+
+
+
+Class: Address
+Attributes:
+_street: string
+_city: string
+_state: string
+_country: string
+
+Behaviors:
+Address(street: string, city: string, state: string, country: string)
+GetStreet: string
+SetStreet: string
+GetCity: string
+SetCity: string
+GetState: string
+SetState: string
+GetCountry: string
+SetCountry: string
+isInUSA: bool
+
+
+Class: Order
+Attributes:
+_products: List<Product>
+_customer: Customer
+
+
+Behaviors
+Order(customer: string, products: List<Product>)
+GetTotalCost: double
+GetPackingLabel: string
+GetShippingLable: string
