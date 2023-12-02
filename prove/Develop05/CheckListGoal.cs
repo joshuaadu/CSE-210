@@ -30,7 +30,15 @@ class CheckListGoal : Goal
             }
         }
     }
+    public override string Display()
+    {
+        return base.Display() + $" -- Currently completed: {_completionCount}/{_requiredCompletionCount}";
+    }
 
+    public override string ToString()
+    {
+        return base.ToString() + string.Format(", {0}, {1}, {2}", _completionCount, _requiredCompletionCount, _completionBonusPoints);
+    }
     public new static Dictionary<string, string> Prompt()
     {
         Dictionary<string, string> prompt = Goal.Prompt();
@@ -51,13 +59,4 @@ class CheckListGoal : Goal
         return prompt;
     }
 
-    public override string Display()
-    {
-        return base.Display() + $" -- Currently completed: {_completionCount}/{_requiredCompletionCount}";
-    }
-
-    public override string ToString()
-    {
-        return base.ToString() + string.Format(", {0}, {1}, {2}", _completionCount, _requiredCompletionCount, _completionBonusPoints);
-    }
 }

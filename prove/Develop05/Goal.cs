@@ -62,8 +62,11 @@ class Goal
 
     public virtual string Display()
     {
-        // return _name + " " + _description + " " + _points + " " + _startTime + " " + _endTime + " " + _completed;
         return $"{_name} ({_description})";
+    }
+    public new virtual string ToString()
+    {
+        return string.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}", _goalType, _name, _description, _points, _startTime, _endTime, _completed);
     }
 
     public static Dictionary<string, string> Prompt()
@@ -85,9 +88,4 @@ class Goal
         return prompt;
     }
 
-    public new virtual string ToString()
-    {
-        return string.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}", _goalType, _name, _description, _points, _startTime, _endTime, _completed);
-        // return _name + " " + _description + " " + _points + " " + _startTime + " " + _endTime + " " + _completed;
-    }
 }
