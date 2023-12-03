@@ -43,16 +43,5 @@ class Product
         return $"({Id}): {Name} - {Price} ({Quantity} in stock)";
     }
 
-    public override bool Equals(object obj)
-    {
-        if (obj is Product)
-        {
-            var other = (Product)obj;
-            return Id.Equals(other.Id);
-        }
-
-        return false;
-    }
-
 
 }
