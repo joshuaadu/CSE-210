@@ -27,7 +27,7 @@ public abstract class Activity
 
     public virtual string GetSummary()
     {
-        return $"{_date.ToShortDateString()} {_type} ({_minutes})";
+        return $"{_date.ToString("dd MMMM yyyy")} {_type} ({_minutes})";
     }
     public abstract double GetDistance();
     public abstract double GetSpeed();
