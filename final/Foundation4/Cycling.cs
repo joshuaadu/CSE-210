@@ -10,7 +10,7 @@ public class Cycling : Activity
 
     public override string GetSummary()
     {
-        return $"{base.GetSummary()} - {GetDistance()} miles, Speed {GetSpeed()} mph, Pace {GetPace()} min per mile";
+        return $"{base.GetSummary()} - {Double.Round(GetDistance(), 2)} miles, Speed {Double.Round(GetSpeed(), 2)} mph, Pace {Double.Round(GetPace(), 2)} min per mile";
     }
 
     public override double GetDistance()
